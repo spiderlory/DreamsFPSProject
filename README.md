@@ -5,8 +5,49 @@ This is the final step of an evolving personal project I did for fun. It started
 The architecture was designed to be scalable and easily extendable, with modular components that can be enabled or disabled per weapon, and support for both first- and third-person perspectives. extend.
 
 # Animations
-## Blend Tree simulation
-The tools given in dreams did not account for blending between different animation, something that is fundamental for an fps to feel smooth to play. Using the internal logic, I managed to simulate a blend tree using timers. Thanks to this system I managed to create extremely fluent transitions between different weapon's states with no interruption or artifacts.
-## Shared parametric animations
-In the game there is a thermometer that limits how much things can be put inside a scene. Animations in particular are extremely resource heavy so it was not feasable to create multiple animations for each weapon. To increase the maximum number of weapons, I decided to create a framework with shared parametric animations. The framework manages all weapons animations related to: walk, run, recoil and camera movement and each one can be customized by setting different intensity parameters. With this approach I managed to reduce by a lot the cost of a single weapon. Not only that, with this system each new weapon only needs to set a keyframe for the idle, ads, run and stowed states without any need to create timelines to manage animations. This made adding a new gun extremely easy and scalable. I also added the possibility to disable the automatic animations and add custom animations for a specific weapon.
 
+## Blend Tree Simulation
+The tools provided in Dreams did not support blending between different animations, which is fundamental for an FPS to feel smooth and responsive. Using the internal logic system, I managed to simulate a blend tree using timers. Thanks to this system, I was able to create extremely smooth transitions between different weapon states with no interruptions or visual artifacts.
+
+## Shared Parametric Animations
+Dreams includes a “thermometer” system that limits how many elements can be placed inside a scene. Animations, in particular, are extremely resource-heavy, so it was not feasible to create multiple animations for each weapon.
+
+To increase the maximum number of supported weapons, I designed a framework based on shared parametric animations. The framework manages all weapon-related animations such as walk, run, recoil, and camera movement, and each one can be customized by setting different intensity parameters.
+
+With this approach, I significantly reduced the resource cost of a single weapon. Additionally, with this system, each new weapon only needs to define keyframes for the idle, ADS, run, and stowed states, without requiring custom timelines to manage animations.
+
+This made adding a new weapon extremely easy and scalable.
+
+I also added the possibility to disable the automatic animation system and implement fully custom animations for specific weapons when needed.
+
+# Mechanics
+
+## Weapon Swap and Modular Weapon System
+
+## Recoil and Accuracy/Weapon Spread
+
+## Parametric Weapon Firing Module
+
+### Custom Improved Timer
+
+## Shooting Mode
+
+# Mechanics
+
+## Modular Weapon Architecture
+
+## Parametric Weapon Firing Module
+### Custom High-Precision Timer
+
+## Weapon Swap System
+
+## Recoil & Accuracy System
+
+## Animation Framework
+- Blend tree simulation
+- Shared parametric animations
+
+## Future Improvements
+- Ammunition system
+- Physics-based projectile refinement
+- Extended third-person support
